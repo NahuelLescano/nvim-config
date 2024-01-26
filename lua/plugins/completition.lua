@@ -1,12 +1,17 @@
 return {
     {
         "hrsh7th/cmp-nvim-lsp",
+        "hrsh7th/cmp-buffer",
+        "hrsh7th/cmp-path",
+        "hrsh7th/cmp-cmdline",
+        "hrsh7th/nvim-cmp",
     },
     {
         "L3MON4D3/LuaSnip",
         dependencies = {
             "saadparwaiz1/cmp_luasnip",
             "rafamadriz/friendly-snippets",
+            "j-hui/fidget.nvim",
         },
     },
     {
@@ -14,6 +19,8 @@ return {
         config = function()
             local cmp = require("cmp")
             require("luasnip.loaders.from_vscode").lazy_load()
+
+            require("fidget").setup()
 
             cmp.setup({
                 snippet = {
@@ -38,6 +45,17 @@ return {
                     }, {
                         { name = "buffer" },
                 }),
+            })
+            vim.diagnostic.config({
+                update_in_insert = true,
+                float = {
+                    focusable = false,
+                    style = "minimal",
+                    border = "rounded",
+                    source = "always",
+                    header = "",
+                    prefix = "",
+                },
             })
         end,
     },
