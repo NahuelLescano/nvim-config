@@ -22,6 +22,8 @@ return {
 
             require("fidget").setup()
 
+            require("luasnip").filetype_extend("javascript", { "jsdoc" })
+
             cmp.setup({
                 snippet = {
                     expand = function(args)
