@@ -22,7 +22,16 @@ return {
 
             require("fidget").setup()
 
-            require("luasnip").filetype_extend("javascript", { "jsdoc" })
+            local ls = require("luasnip")
+            ls.filetype_extend("javascript", { "jsdoc" })
+            vim.keymap.set({ "i", "s" }, "<leader>;", function()
+                ls.jump(1)
+            end, { silent = true })
+
+            vim.keymap.set({ "i", "s" }, "<leader>,", function()
+                ls.jump(-1)
+            end, { silent = true })
+
 
             cmp.setup({
                 snippet = {
@@ -44,8 +53,8 @@ return {
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
                     { name = "luasnip" },
-                    }, {
-                        { name = "buffer" },
+                }, {
+                    { name = "buffer" },
                 }),
             })
             vim.diagnostic.config({
