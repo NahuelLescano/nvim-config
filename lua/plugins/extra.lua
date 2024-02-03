@@ -29,4 +29,7 @@ return {
     {
         "christoomey/vim-tmux-navigator",
     },
+    {
+        "yaegassy/coc-volar",
+    },
 }
