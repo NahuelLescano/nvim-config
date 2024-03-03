@@ -21,6 +21,7 @@ vim.opt.incsearch = true
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
+vim.opt.cursorline = true
 
 -- Case insensitive searching UNLESS /C or capital in search
 vim.opt.ignorecase = true
@@ -46,6 +47,8 @@ vim.opt.history = 30
 
 -- Highlight the region on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
+    desc = 'Highlight when yanking (copying) text',
+    group = vim.api.nvim_create_augroup('nahuel-highlight-yank', { clear = true }),
     callback = function()
         vim.highlight.on_yank({ higroup = "Visual", timeout = 150 })
     end,

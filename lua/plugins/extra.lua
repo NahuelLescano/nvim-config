@@ -32,4 +32,7 @@ return {
     {
         "yaegassy/coc-volar",
     },
+    {
+        "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}
+    }
 }
