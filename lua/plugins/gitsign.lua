@@ -3,7 +3,7 @@ return {
     config = function()
         require("gitsigns").setup()
         local gs = require("gitsigns")
-        vim.keymap.set("n", "<leader>gp", gs.preview_hunk)
-        vim.keymap.set("n", "<leader>gb", gs.toggle_current_line_blame)
+        vim.keymap.set("n", "<leader>gh", gs.preview_hunk)
+        vim.keymap.set("n", "<leader>gcb", gs.toggle_current_line_blame)
     end,
 }
