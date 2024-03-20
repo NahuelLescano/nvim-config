@@ -12,7 +12,8 @@ return {
                     "lua_ls",
                     "tsserver",
                     "html",
-                    "cssls"
+                    "cssls",
+                    "gopls"
                 },
             })
         end,
@@ -32,6 +33,9 @@ return {
                 capabilities = capabilities,
             })
             lspconfig.cssls.setup({
+                capabilities = capabilities,
+            })
+            lspconfig.gopls.setup({
                 capabilities = capabilities,
             })
 
