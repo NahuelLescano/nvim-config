@@ -27,9 +27,6 @@ return {
         "frazrepo/vim-rainbow",
     },
     {
-        "christoomey/vim-tmux-navigator",
-    },
-    {
         "yaegassy/coc-volar",
     },
     {

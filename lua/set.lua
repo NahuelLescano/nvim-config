@@ -47,27 +47,12 @@ vim.opt.history = 30
 
 -- Highlight the region on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
-    desc = 'Highlight when yanking (copying) text',
-    group = vim.api.nvim_create_augroup('nahuel-highlight-yank', { clear = true }),
+    desc = "Highlight when yanking (copying) text",
+    group = vim.api.nvim_create_augroup("nahuel-highlight-yank", { clear = true }),
     callback = function()
         vim.highlight.on_yank({ higroup = "Visual", timeout = 150 })
     end,
 })
 
--- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
---     pattern = "*",
---     command = [[%s/\s\+$//e]],
--- })
+vim.g.have_nerd_font = true
 
--- Buffer usage
-vim.keymap.set("n", "<leader>bn", "<CMD>bn<CR>")
-vim.keymap.set("n", "<leader>bp", "<CMD>bp<CR>")
-
--- Vertical split
-vim.keymap.set("n", "<leader>vs", "<CMD>vs<CR>")
-
--- Horizonal split
-vim.keymap.set("n", "<leader>vh", "<CMD>split<CR>")
-
--- Open terminal
-vim.keymap.set("n", "<leader>t", "<CMD>term<CR>")
