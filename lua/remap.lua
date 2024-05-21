@@ -14,18 +14,11 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.keymap.set("n", "<leader><leader>", "<cmd>so<CR>")
 
--- Buffer usage
-vim.keymap.set("n", "<leader>bn", "<CMD>bn<CR>")
-vim.keymap.set("n", "<leader>bp", "<CMD>bp<CR>")
-
 -- Vertical split
 vim.keymap.set("n", "<leader>vs", "<CMD>vs<CR>")
 
 -- Horizonal split
 vim.keymap.set("n", "<leader>vh", "<CMD>split<CR>")
-
--- Open terminal
-vim.keymap.set("n", "<leader>t", "<CMD>term<CR>")
 
 -- Navigate nvim panes better
 vim.keymap.set("n", "<C-k>", ":wincmd k <CR>")
