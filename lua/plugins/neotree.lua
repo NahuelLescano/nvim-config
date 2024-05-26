@@ -7,11 +7,17 @@ return {
         "MunifTanjim/nui.nvim",
     },
     config = function()
-        vim.keymap.set("n", "<leader>n", ":Neotree filesystem reveal left<CR>")
+        vim.keymap.set("n", "<leader>n", ":Neotree filesystem reveal right<CR>")
         vim.keymap.set("n", "<C-c>", ":Neotree close<CR>")
         require("neo-tree").setup({
             filesystem = {
-                hide_dotfiles = false,
+                filtered_items = {
+                    hide_dotfiles = false,
+                },
+
+                hide_by_name = {
+                    "node_modules",
+                },
             },
         })
     end,

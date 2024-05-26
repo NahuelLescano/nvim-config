@@ -56,4 +56,3 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.g.have_nerd_font = true
-

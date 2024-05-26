@@ -1,8 +1,5 @@
--- Some remapping from ThePrimagean
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-
-vim.keymap.set("n", "J", "mzJ`z")
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -21,7 +18,7 @@ vim.keymap.set("n", "<leader>vs", "<CMD>vs<CR>")
 vim.keymap.set("n", "<leader>vh", "<CMD>split<CR>")
 
 -- Navigate nvim panes better
-vim.keymap.set("n", "<C-k>", ":wincmd k <CR>")
-vim.keymap.set("n", "<C-j>", ":wincmd j <CR>")
-vim.keymap.set("n", "<C-h>", ":wincmd h <CR>")
-vim.keymap.set("n", "<C-l>", ":wincmd l <CR>")
+vim.keymap.set("n", "<C-k>", "<CMD>wincmd k<CR>")
+vim.keymap.set("n", "<C-j>", "<CMD>wincmd j<CR>")
+vim.keymap.set("n", "<C-h>", "<CMD>wincmd h<CR>")
+vim.keymap.set("n", "<C-l>", "<CMD>wincmd l<CR>")
