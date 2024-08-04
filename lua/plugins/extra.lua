@@ -15,19 +15,10 @@ return {
         },
     },
     {
-        "junegunn/goyo.vim",
-    },
-    {
-        "junegunn/limelight.vim",
-    },
-    {
         "junegunn/vim-emoji",
     },
     {
         "frazrepo/vim-rainbow",
-    },
-    {
-        "yaegassy/coc-volar",
     },
     {
         "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}
