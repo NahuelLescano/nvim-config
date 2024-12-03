@@ -22,3 +22,6 @@ vim.keymap.set("n", "<C-k>", "<CMD>wincmd k<CR>")
 vim.keymap.set("n", "<C-j>", "<CMD>wincmd j<CR>")
 vim.keymap.set("n", "<C-h>", "<CMD>wincmd h<CR>")
 vim.keymap.set("n", "<C-l>", "<CMD>wincmd l<CR>")
+
+vim.keymap.set("n", "<leader>x", ":.lua<CR>")
+vim.keymap.set("v", "<leader>x", ":.lua<CR>")
