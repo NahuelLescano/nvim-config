@@ -3,7 +3,6 @@ vim.g.maplocalleader = " "
 vim.g.mapleader = " "
 vim.opt.nu = true
 vim.opt.relativenumber = true
-
 vim.opt.mouse = "a"
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -15,8 +14,9 @@ vim.opt.wrap = false
 -- Deactivating swap and backup files
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.nvim/undodir"
+
 vim.opt.undofile = true
+
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.scrolloff = 8
@@ -24,7 +24,6 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 vim.opt.cursorline = true
 
--- Case insensitive searching UNLESS /C or capital in search
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
@@ -32,14 +31,12 @@ vim.opt.smartcase = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
--- Better editing experience
 vim.opt.expandtab = true
 vim.opt.smarttab = true
 vim.opt.cindent = true
 vim.opt.autoindent = true
 vim.opt.wrap = true
 vim.opt.textwidth = 300
-vim.opt.tabstop = 4
 vim.opt.list = true
 vim.opt.clipboard = "unnamedplus"
 
