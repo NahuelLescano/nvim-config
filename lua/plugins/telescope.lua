@@ -51,7 +51,7 @@ return {
       vim.keymap.set("n", "<C-p>", builtin.git_files, { desc = "Search git files" })
       vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[S]earch [H]elp" })
 
-      vim.keymap.set("n", "<leader>fg", function()
+      vim.keymap.set("n", "<leader>gg", function()
         builtin.grep_string({ search = vim.fn.input("Grep > ") })
       end, { desc = "[S]earch a word in the project" })
 
@@ -61,8 +61,7 @@ return {
         })
       end)
 
-      local live_grep = require("config.telescope.custom_multigrep").setup()
-      vim.keymap.set("n", "<leader>fg", live_grep, { desc = "[L]ive [G]rep" })
+      require("config.telescope.custom_multigrep").setup()
 
       vim.keymap.set("n", "<leader>sw", function()
         local word = vim.fn.expand("<cword>")

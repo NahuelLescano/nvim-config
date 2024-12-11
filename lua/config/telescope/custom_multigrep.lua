@@ -39,18 +39,18 @@ local live_multigrep = function(opts)
   })
 
   pickers
-      .new(opts, {
-        debouce = 300,
-        prompt_title = "Live Grep",
-        finder = finder,
-        previewer = conf.grep_previewer(opts),
-        sorter = require("telescope.sorters").empty(),
-      })
-      :find()
+    .new(opts, {
+      debouce = 300,
+      prompt_title = "Live Grep",
+      finder = finder,
+      previewer = conf.grep_previewer(opts),
+      sorter = require("telescope.sorters").empty(),
+    })
+    :find()
 end
 
 M.setup = function()
-  live_multigrep()
+  vim.keymap.set("n", "<leader>lg", live_multigrep, { desc = "[L]ive [G]rep" })
 end
 
 return M
