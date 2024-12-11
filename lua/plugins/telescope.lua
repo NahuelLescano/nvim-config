@@ -35,6 +35,12 @@ return {
             theme = "ivy",
           },
         },
+        extensions = {
+          fzf = {},
+          ui_select = {
+            theme = "ivy",
+          },
+        },
       })
 
       local builtin = require("telescope.builtin")
@@ -48,6 +54,15 @@ return {
       vim.keymap.set("n", "<leader>fg", function()
         builtin.grep_string({ search = vim.fn.input("Grep > ") })
       end, { desc = "[S]earch a word in the project" })
+
+      vim.keymap.set("n", "<leader>ep", function()
+        builtin.find_files({
+          cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy"),
+        })
+      end)
+
+      local live_grep = require("config.telescope.custom_multigrep").setup()
+      vim.keymap.set("n", "<leader>fg", live_grep, { desc = "[L]ive [G]rep" })
 
       vim.keymap.set("n", "<leader>sw", function()
         local word = vim.fn.expand("<cword>")
