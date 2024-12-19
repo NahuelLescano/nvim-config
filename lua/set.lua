@@ -45,11 +45,29 @@ vim.opt.history = 30
 
 -- Highlight the region on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
-    desc = "Highlight when yanking (copying) text",
-    group = vim.api.nvim_create_augroup("nahuel-highlight-yank", { clear = true }),
-    callback = function()
-        vim.highlight.on_yank({ higroup = "Visual", timeout = 150 })
-    end,
+  desc = "Highlight when yanking (copying) text",
+  group = vim.api.nvim_create_augroup("nahuel-highlight-yank", { clear = true }),
+  callback = function()
+    vim.highlight.on_yank({ higroup = "Visual", timeout = 150 })
+  end,
 })
 
 vim.g.have_nerd_font = true
+
+vim.api.nvim_create_autocmd("TermOpen", {
+  desc = "Open a terminal inside neovim",
+  group = vim.api.nvim_create_augroup("custom-term-open", { clear = true }),
+  callback = function()
+    vim.opt.number = false
+    vim.opt.relativenumber = false
+  end,
+})
+
+vim.keymap.set("n", "<leader>st", function()
+  vim.cmd.vnew()
+  vim.cmd.term()
+  vim.cmd.wincmd("J")
+  vim.api.nvim_win_set_height(0, 10)
+end)
+
+vim.keymap.set("t", "<esc><esc>", "<C-\\><C-n>")
